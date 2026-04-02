@@ -11,7 +11,7 @@ export const useCountriesStore = defineStore('countries', () => {
     if (list.value.length) return
     loading.value = true
     try {
-      const { data } = await api.get('/countries/')
+      const { data } = await api.get('/countries')
       list.value = data.results || data
     } catch (e) {
       console.warn('Countries fetch failed', e.message)
